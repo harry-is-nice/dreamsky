@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>GoEun Park | Interactive Portfolio</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Segoe UI', 'Pretendard', sans-serif;
+      background: linear-gradient(to right, #e0f7fa, #e3f2fd);
+      color: #2c3e50;
+      display: flex;
+      height: 100vh;
+      overflow: hidden;
+    }
+
+    nav {
+      width: 250px;
+      background: linear-gradient(to bottom, #ffffff, #e0f2f1);
+      padding: 40px 20px;
+      box-shadow: 2px 0 10px rgba(0,0,0,0.05);
+      display: flex;
+      flex-direction: column;
+      animation: slideInLeft 0.6s ease forwards;
+    }
+
+    @keyframes slideInLeft {
+      from { transform: translateX(-100%); opacity: 0; }
+      to { transform: translateX(0); opacity: 1; }
+    }
+
+    nav h2 {
+      margin-bottom: 30px;
+      font-size: 24px;
+      background: linear-gradient(90deg, #0077cc, #00bcd4);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      font-weight: bold;
+    }
+
+    nav ul {
+      list-style: none;
+    }
+
+    nav li {
+      margin-bottom: 20px;
+      cursor: pointer;
+      font-size: 18px;
+      transition: all 0.3s ease;
+      padding-left: 10px;
+    }
+
+    nav li:hover,
+    nav li.active {
+      color: #0077cc;
+      font-weight: bold;
+      transform: translateX(3px);
+    }
+
+    .content {
+      flex: 1;
+      padding: 60px;
+      overflow-y: auto;
+      animation: fadeIn 0.6s ease forwards;
+    }
+
+    .section {
+      display: none;
+      animation: fadeIn 0.4s ease;
+    }
+
+    .section.active {
+      display: block;
+    }
+
+    .section img {
+      width: 1200px;
+      height: 600px;
+      object-fit: cover;
+      display: block;
+      margin: 0 auto 30px auto;
+      border-radius: 16px;
+      box-shadow: 0 6px 30px rgba(0,0,0,0.15);
+    }
+
+    h1 {
+      font-size: 36px;
+      background: linear-gradient(to right, #2196f3, #00acc1);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      margin-bottom: 20px;
+      border-bottom: 2px solid #00acc1;
+      display: inline-block;
+      padding-bottom: 5px;
+    }
+
+    p {
+      font-size: 18px;
+      color: #37474f;
+      margin-bottom: 20px;
+      white-space: pre-line;
+      line-height: 1.9;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(10px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+  </style>
+</head>
+<body>
+  <nav>
+    <div>
+      <h2>GoEun Park</h2>
+      <ul>
+        <li class="active" onclick="showSection('home', this)">Home</li>
+        <li onclick="showSection('about', this)">About</li>
+        <li onclick="showSection('projects', this)">Projects</li>
+        <li onclick="showSection('contact', this)">Contact</li>
+      </ul>
+    </div>
+  </nav>
+
+  <div class="content">
+    <div id="home" class="section active">
+      <img src="me.png" alt="GoEun Park portrait">
+      <h1>Hello, I'm GoEun Park!</h1>
+      <p>
+        I'm someone who finds deep meaning in learning new things and connecting them to people and ideas.
+        My work is rooted in curiosity, not just understanding how things function, but exploring why they matter.
+
+        In a rapidly shifting world, I see technology not as the end but as a means—
+        a bridge to help us comprehend, relate, and create meaning together.
+
+        This portfolio is a reflection of my journey as a thinker, maker, and collaborator,
+        and serves as a space to share thoughts, explorations, and creations.
+
+        Just like the sky—vast, free, and ever-changing—I hope to build work that feels open, human, and expressive.
+      </p>
+    </div>
+
+    <div id="about" class="section">
+      <img src="image1.jpg" alt="Abstract sky scene">
+      <h1>About Me</h1>
+      <p>
+        I am a lifelong learner driven by curiosity and empathy.
+        I ask questions not only to find answers, but to better connect people to each other and to the world around them.
+
+        I'm most alive when I'm exploring unfamiliar tools or ideas.
+        Instead of being intimidated by new technologies, I engage with them like collaborators.
+
+        From ChatGPT to Notion AI, Midjourney to Make.com—
+        I use these tools to imagine new workflows, simplify complex thoughts, and express creativity visually and verbally.
+
+        My work is always people-centered. It lives at the intersection of technology, story, and soul.
+      </p>
+    </div>
+
+    <div id="projects" class="section">
+      <img src="image2.jpg" alt="Visual representation of creativity">
+      <h1>Projects</h1>
+      <p>
+        ✍️ AI-Written Essays & Articles  
+        I use ChatGPT to co-write initial drafts for storytelling, documentation, and workshops.
+
+        🎨 Visual Concept Prototyping  
+        I experiment with abstract visuals using Midjourney to spark emotional engagement in design.
+
+        ⚙️ Workflow Automation  
+        I design automated flows using Notion AI and Make to save time, reduce friction, and enhance collaboration.
+
+        My projects blend logic and emotion, always aiming to make technology feel more intuitive and human.
+        I treat every project as a learning journey that fuels more meaningful communication.
+      </p>
+    </div>
+
+    <div id="contact" class="section">
+      <img src="image3.jpg" alt="Calm sunset with shell and ocean">
+      <h1>Contact</h1>
+      <p>
+        I’m always excited to connect with thoughtful people.
+
+        If you’d like to collaborate, ask a question, or simply say hi,
+        feel free to reach out through any of the following:
+
+        ✉️ Email: GoEunPark@example.com  
+        🐙 GitHub: github.com/GoEunPark  
+        💼 LinkedIn: linkedin.com/in/GoEunPark
+        Let’s build something beautiful together—one message at a time.
+      </p>
+    </div>
+  </div>
+
+  <script>
+    function showSection(id, element) {
+      document.querySelectorAll('nav li').forEach(li => li.classList.remove('active'));
+      document.querySelectorAll('.section').forEach(sec => sec.classList.remove('active'));
+      element.classList.add('active');
+      document.getElementById(id).classList.add('active');
+    }
+  </script>
+</body>
+</html>
